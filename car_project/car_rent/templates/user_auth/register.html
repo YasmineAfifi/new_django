@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html'%}
+
+{% block main %}
+
+     <div class="h-screen flex items-center justify-center bg-[#212121]">
+    
+        <form method="post" class="min-w-[360px] bg-slate-50 px-4 py-8 rounded-lg shadow-2xl">
+             <p class="text-center font-bold text-lg">Register</p>
+            <div class="my-3">
+                <input type="text" placeholder="Your full name" class="w-full rounded-md border-0 p-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow-600 outline-0"  name = "name"  >
+            </div>
+         
+            <div class="my-3">
+                <input type="text" placeholder="email"  name = "email"  class="w-full rounded-md border-0 p-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow-600 outline-0" >
+    
+            </div>
+            <div class="my-3">
+
+                <input type="password" placeholder="password" class="w-full rounded-md border-0 p-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow-600 outline-0"  name = "password" >
+    
+            </div>
+
+            <div  class="text-center">
+
+                <button class=" w-full bg-yellow-600 py-1.5 rounded-md text-white">Sign up</button>
+
+            </div>
+    <p class="text-center">Already have an acccount? <a href="{% url 'login'%}">Login</a></p>
+    
+        </form>
+    </div>
+
+{% endblock main %}

@@ -1,0 +1,107 @@
+{% extends 'layouts/base.html' %}  
+
+{%load static%}
+
+{% block main %}
+
+ {% comment %} {%include 'layouts/navbar.html'%} {% endcomment %}
+
+        <div  class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+
+            <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+           
+                <div class='mt-3 mb-3'>
+
+                <div class='w-full h-[250px]'>
+              
+                <img class='h-full w-full object-cover' src="{% static 'image/4.jpg' %}">
+
+                <div class='flex justify-between'>
+                    
+                    <div>
+                    <a class='titleCardDelete' href='/carDetails/'>
+                    <h5 class='card-title py-3'>Fiat</h5></a>
+                    </div>
+                    <div class='py-3 text-center'>
+                    <a href='/edit/'>
+                    <img src="{% static 'image/edit.png' %}" width='15'></a>
+                    </div>
+                </div>
+
+                </div>
+                
+                <a class='titleCardDelete' href='/carDetails/'>
+                    <h5 class='card-title py-3'>Fiat</h5></a>
+                    <div class='btnCardContainer pb-3'>
+                    <a class='bg-[#0B5ED7]' href='/carDetails/'>Details</a>
+                    <a type='button' class='bg-[#5C636A]' data-bs-toggle='modal' data-bs-target='#exampleModal_'>Delete</a>
+                    </div>
+                  </div>
+
+                  </div>
+                  
+                  </div>
+
+                    {% comment %} <div class='modal fade' id='exampleModal_' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                      <div class='modal-dialog'>
+                        <div class='modal-content'>
+                          <div class='modal-header'>
+                            <h1 class='modal-title fs-5' id='exampleModalLabel'>Confirm</h1>
+                            <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                          </div>
+                          <div class='modal-body'>
+                           Do you want to delete ?
+                          </div>
+                          <div class='modal-footer'>
+                            <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
+                            <form  action='/delete/' method='post'>
+                            <button class='btn btn-danger' type='submit'>Delete</button>
+                            </form>
+                           </div>
+                        </div>
+                    
+                    </div> {% endcomment %}
+                    
+                   </div>
+        
+            </div>
+     
+       </div>
+
+
+          <div class="bg-white">
+            <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+          
+              <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        
+                <div class=" relative">
+                  <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none lg:h-80">
+                    <img src="{%static 'image/4.jpg'%}" alt="card image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                  </div>
+                  <div class="mt-4 flex justify-between">
+                    <div>
+                      <h3 class="text-sm text-gray-700">
+                        <a href="#">
+                          <span aria-hidden="true" class="absolute inset-0"></span>
+                          Basic Tee
+                        </a>
+                      </h3>
+                      <p class="mt-1 text-sm text-gray-500">Black</p>
+                    </div>
+                    <p class="text-sm font-medium text-gray-900">$35</p>
+                  </div>
+                </div>
+                
+                <!-- More products... -->
+              </div>
+            </div>
+          </div>
+
+
+{% endblock main %}
+
+
+
+
+
+
