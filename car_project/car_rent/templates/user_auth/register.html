@@ -5,19 +5,23 @@
      <div class="h-screen flex items-center justify-center bg-[#212121]">
     
         <form method="post" class="min-w-[360px] bg-slate-50 px-4 py-8 rounded-lg shadow-2xl">
-             <p class="text-center font-bold text-lg">Register</p>
+            {% csrf_token %}
+
+
+            <p class="text-center font-bold text-lg">Register</p>
             <div class="my-3">
-                <input type="text" placeholder="Your full name" class="w-full rounded-md border-0 p-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow-600 outline-0"  name = "name"  >
+            {{rf.name}}
+            {{rf.name.errors}}
             </div>
          
             <div class="my-3">
-                <input type="text" placeholder="email"  name = "email"  class="w-full rounded-md border-0 p-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow-600 outline-0" >
-    
+             {{rf.email}}
+             {{rf.email.errors}}
             </div>
             <div class="my-3">
+                {{rf.password}}
+                {{rf.password.errors}}
 
-                <input type="password" placeholder="password" class="w-full rounded-md border-0 p-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow-600 outline-0"  name = "password" >
-    
             </div>
 
             <div  class="text-center">
@@ -29,5 +33,7 @@
     
         </form>
     </div>
+
+
 
 {% endblock main %}

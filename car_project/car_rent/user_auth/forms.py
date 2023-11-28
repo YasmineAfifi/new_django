@@ -1,9 +1,18 @@
 from django import forms
-from .models import Login
+from .models import Register
 
 
-
-class LoginForm(forms.Form):
+class RegisterForm(forms.ModelForm):
     class Meta:
-        model = Login
-        field = '__all__'
+        model = Register
+        fields = '__all__'
+        widgets ={
+            'name':forms.TextInput(attrs={"class":"registerInputs",'placeholder': 'Your Full Name'}),
+            'email':forms.EmailInput(attrs={'class':'registerInputs','placeholder': 'Email'}),
+            'password':forms.PasswordInput(attrs={'class':'registerInputs','placeholder': 'Password'})
+        }
+        
+    # def __init__(self, *args, **kwargs):
+    #     super(RegisterForm, self).__init__(*args, **kwargs)
+    #     for field_name, field in self.fields.items():
+    #         field.required = False
