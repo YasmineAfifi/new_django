@@ -5,5 +5,9 @@ urlpatterns = [
     
     path('home',views.get_home_page,name='home'),
     path('addCar',views.add_car,name='addCar'),
+    path('carDetails/<int:car_id>',views.get_details,name='carDetails'),
+    path('delete/<int:car_id>',views.delete_car),
+    path('update/<int:car_id>',views.update_car)
+
     
 ]
