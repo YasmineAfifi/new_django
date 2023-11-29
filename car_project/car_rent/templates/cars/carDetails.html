@@ -6,8 +6,6 @@
 
  {%include 'layouts/navbar.html'%}
 
-<div >
-  <div >
       <div class="bg-slate-300 h-full">
 
         <div class="flex justify-center px-3" >
@@ -15,6 +13,11 @@
         </div>
 
         <div class="text-center">
+          <form action="/reserve" method="post" id="reserveForm">
+            <input type="hidden" name="brand" value={{car.brand}}>
+            <input type="hidden" name="price" value={{car.price}}>
+            <input type="hidden" name="color" value={{car.color}}>
+            
             <p class="text-2xl font-bold">{{details.brand}}</p>
             <hr>
             <div >
@@ -23,7 +26,46 @@
             </div>
 
       </div>
+
+
+    <div class="flex justify-center">
+     
+      <div class=" grid grid-cols-2  gap-4 my-3 mx-3 w-1/2">
+        <div >
+        <input placeholder="From" type="text" class="registerInputs" name="dateFrom" id="dateFrom" onfocus="this.type='date'" onblur="this.type='text'">
+        <span id="dateFromError" class="Error"></span>
+
+        </div>
+        <div>
+         <input placeholder="To" type="text"  class="registerInputs" name="dateTo" id="dateTo" onfocus="this.type='date'" onblur="this.type='text'">
+         <span id="dateToError" class="Error"></span>
+
+        </div>
+     
+      </div>
+
+
+
+  
     </div>
-  </div>
+    <div class="text-center pb-5">
+      <button type="submit" class=" w-1/4 bg-yellow-600 py-1.5 rounded-md text-white">Reserve</button>
+    </div>
+  </form>
+
+</div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
   {% endblock main %}
