@@ -11,8 +11,20 @@ class RegisterForm(forms.ModelForm):
             'email':forms.EmailInput(attrs={'class':'registerInputs','placeholder': 'Email'}),
             'password':forms.PasswordInput(attrs={'class':'registerInputs','placeholder': 'Password'})
         }
+        error_messages = {
+            'name': {
+                'required':"Name Is Required",
+                'max_length':"Name must be less than 30 char"
+            },
+            'email':
+            {   'required':'Email Is Required',
+                'unique':'Email is already Exist'
+            },'password':
+            {
+                'required':'Password Is Required',
+                'max_length':'Password is more than 15 char'
+            }
+            
+        }
         
-    # def __init__(self, *args, **kwargs):
-    #     super(RegisterForm, self).__init__(*args, **kwargs)
-    #     for field_name, field in self.fields.items():
-    #         field.required = False
+   
